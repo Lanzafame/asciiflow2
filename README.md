@@ -16,10 +16,12 @@ Compile the javascript:
     $ ./compile.sh
 
 If you get a permissions error:
+
     $ chmod a+x closure-compiler.jar
 
 Run a simple web server:
-    $python -m SimpleHTTPServer
+
+    $ python -m SimpleHTTPServer
 
 Go to: http://localhost:8000/index.html
 
