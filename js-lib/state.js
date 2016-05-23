@@ -338,17 +338,7 @@ ascii.State.prototype.fromText = function(value, offset) {
   for (var j = 0; j < lines.length; j++) {
     var line = lines[j];
     for (var i = 0; i < line.length; i++) {
-      var char = line.charAt(i);
-      // Convert special output back to special chars.
-      // TODO: This is a horrible hack, need to handle multiple special chars
-      // correctly and preserve them through line drawing etc.
-      if (SPECIAL_VALUES.indexOf(char)  != -1) {
-        char = SPECIAL_VALUE;
-      }
-      if (ALT_SPECIAL_VALUES.indexOf(char) != -1) {
-        char = ALT_SPECIAL_VALUE;
-      }
-      this.drawValue(new ascii.Vector(i, j).add(offset).subtract(middle), char);
+      this.drawValue(new ascii.Vector(i, j).add(offset).subtract(middle), line.charAt(i));
     }
   }
 };
