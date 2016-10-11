@@ -116,7 +116,7 @@ ascii.State.prototype.getDrawValue = function(position) {
     return SPECIAL_LINE_H;
   }
     //  FReD -- both tests are needed (when dragging an arrow, it looks like the cells have extra '+'...)
-  if (isAltSpecial && context.sum() == 2) {
+  if (isAltSpecial && context.sum() >= 1 && context.sum() <= 2) {
     if (this.getCell(position.add(DIR_RIGHT) ).getRawValue()=='+' || this.getCell(position.add(DIR_RIGHT) ).getRawValue()=='-')
       return SPECIAL_ARROW_LEFT;
     if (this.getCell(position.add(DIR_LEFT) ).getRawValue()=='+' || this.getCell(position.add(DIR_LEFT) ).getRawValue()=='-')
@@ -165,21 +165,6 @@ ascii.State.prototype.getDrawValue = function(position) {
       return SPECIAL_LINE_H;
     }
     return SPECIAL_VALUE;
-  }
-
-  if (isAltSpecial && context.sum() == 1) {
-    if (context.left) {
-      return SPECIAL_ARROW_RIGHT;
-    }
-    if (context.up) {
-      return SPECIAL_ARROW_DOWN;
-    }
-    if (context.down) {
-      return SPECIAL_ARROW_UP;
-    }
-    if (context.right) {
-      return SPECIAL_ARROW_LEFT;
-    }
   }
   return value;
 };
