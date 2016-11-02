@@ -13,7 +13,7 @@ Follow the instructions to get asciiflow running locally.
 
 Compile the javascript:
 
-    $ ./compile.sh
+    $ sh compile.sh
 
 If you get a permissions error:
 
@@ -21,7 +21,7 @@ If you get a permissions error:
 
 Run a simple web server:
 
-    $ python -m SimpleHTTPServer
+    $ caddy
 
 Go to: http://localhost:8000/index.html
 
